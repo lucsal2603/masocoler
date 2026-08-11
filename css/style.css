@@ -683,6 +683,15 @@ a:focus-visible, button:focus-visible {
 .lista-voce.accesa .voce-sotto { color: var(--ruggine); }
 .lista-voce.accesa .voce-freccia { color: var(--terra); transform: translate(4px, 4px); }
 
+/* la voce è un pulsante: un link-schermo copre tutto il riquadro */
+.voce-schermo { position: absolute; inset: 0; z-index: 4; }
+
+/* rimando alla pagina di approfondimento, in coda alla sezione */
+.rimando {
+  margin-top: clamp(30px, 5vh, 50px);
+  text-align: center;
+}
+
 /* ═══════════ BANDA SCURA ═══════════ */
 
 .sezione-scura { position: relative; background: transparent; }

@@ -1,10 +1,17 @@
 # Maso Coler — proposta di nuovo sito
 
 Sito vetrina dimostrativo per **Maso Coler**, agriturismo reale in Val di Rabbi
-(Trentino), nel Parco Nazionale dello Stelvio. Un'unica pagina, atmosfera di
-notte alpina: nero caldo, crema, sabbia e ruggine, serif ad alto contrasto.
-Derivato dall'impianto della demo Gelsaia, ricostruito sui contenuti e sulle
+(Trentino), nel Parco Nazionale dello Stelvio. Atmosfera di notte alpina:
+nero caldo, crema, sabbia e ruggine, serif ad alto contrasto. Derivato
+dall'impianto della demo Gelsaia, ricostruito sui contenuti e sulle
 fotografie del sito attuale (masocoler.it).
+
+Home one-page + quattro sottopagine raggiungibili dai pulsanti del menu,
+dalle card e dal footer: **camere.html** (le tre camere con gallerie e
+dotazioni), **colazione.html** (colazione, sala del camino, cucina in comune),
+**valle.html** (attività col sole e con la neve, tradizioni), **contatti.html**
+(recapiti grandi, WhatsApp, come arrivare). Le sottopagine condividono
+`css/pagina.css` e `js/pagina.js` (regia leggera senza loader).
 
 **Demo:** https://lucsal2603.github.io/masocoler/
 

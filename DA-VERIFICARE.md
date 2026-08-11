@@ -13,6 +13,10 @@ Dati ripresi dal sito attuale (masocoler.it) — da riconfermare col cliente:
 
 Assunzioni mie, da correggere se sbagliate:
 
+- **Attribuzione delle foto alle camere nelle sottopagine**: le tende tirolesi nella doppia, il letto a castello tra i dettagli comuni, il bagno "generico" nel blocco dotazioni — i nomi dei file del sito attuale non indicano sempre la stanza
+- Copy delle tessere attività ("Sulle acque della Val di Sole" per il rafting, "Pareti e falesie" per il climbing, "Da giugno alle castagne", "La discesa, da bambini anche da grandi"…) è colore mio sulla base delle attività elencate dal sito attuale
+- "La Desmalgada ▸ il ritorno dalle malghe" è la lettura corrente della festa; il sito attuale la chiama "Desmaljiada" senza spiegarla
+
 - **Il soppalco è attribuito alla camera quadrupla** (il sito dice solo "due camere nel sottotetto hanno soppalco", senza dire quali)
 - **"Legno di cirmolo" attribuito alla camera doppia** (le foto dei dettagli in cirmolo non indicano la stanza)
 - Le parole della ruota di sinistra derivano dai nomi dei file foto del sito attuale
