@@ -717,20 +717,15 @@ a:focus-visible, button:focus-visible {
 
 .titolone-ruota { font-size: clamp(46px, 7vw, 110px); }
 
+/* niente linea-guida: le palle viaggiano libere, sopra il titolo (z 6 > z 5),
+   così mentre entrano lo coprono davvero */
 .ruota-cerchio {
   position: absolute;
   top: 50%;
   width: min(118vh, 80vw);
   aspect-ratio: 1;
   pointer-events: none;
-}
-
-.ruota-cerchio::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--sabbia-linea);
-  border-radius: 50%;
+  z-index: 6;
 }
 
 /* la traslazione dei cerchi la gestisce GSAP (xPercent/yPercent):
@@ -756,7 +751,7 @@ a:focus-visible, button:focus-visible {
 
 .ruota-tessera {
   display: block;
-  width: clamp(170px, 19vw, 290px);
+  width: clamp(150px, 16.5vw, 250px);
   aspect-ratio: 4 / 5;
   will-change: transform;
   overflow: hidden;
@@ -774,12 +769,13 @@ a:focus-visible, button:focus-visible {
 .ruota-nota {
   position: absolute;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: var(--margine);
   font-size: 9px;
   letter-spacing: 0.26em;
   color: var(--sabbia);
   white-space: nowrap;
+  text-align: right;
+  z-index: 7;
 }
 
 /* ── slider stanze ── */
@@ -1144,6 +1140,10 @@ a:focus-visible, button:focus-visible {
     width: min(320px, 84vw);
     line-height: 1.8;
     bottom: 18px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    text-align: center;
   }
   .ruota-altezza { height: 300vh; }
   .manifesto-altezza { height: 300vh; }

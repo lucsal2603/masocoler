@@ -336,13 +336,7 @@
     const quadro = document.getElementById("ruotaQuadro");
     const sinistra = document.getElementById("ruotaSinistra");
     const destra = document.getElementById("ruotaDestra");
-
-    /* Entrambi i cerchi girano in senso antiorario: così le parole
-       (finestra di ore 3) salgono e le tessere (ore 9) scendono.
-       Le tessere sono grandi, quindi passo largo: ne sfila una
-       alla volta, dietro al titolo. */
-    const passoSin = 13, corsaSin = 245;
-    const passoDes = 30, corsaDes = 335;
+    const testa = quadro.querySelector(".ruota-testa");
 
     function prepara(cerchio, base, direzione, passo) {
       const raggi = cerchio.querySelectorAll(".ruota-raggio");
@@ -355,14 +349,6 @@
       });
       return raggi;
     }
-
-    const baseSin = 148; /* le parole aspettano sotto la finestra di ore 3 */
-    const baseDes = -45; /* le tessere aspettano sopra quella di ore 9 */
-
-    gsap.set(sinistra, { xPercent: -62, yPercent: -50, rotation: baseSin });
-    gsap.set(destra, { xPercent: 62, yPercent: -50, rotation: baseDes });
-    const raggiSin = prepara(sinistra, baseSin, 1, passoSin);
-    const raggiDes = prepara(destra, baseDes, 1, passoDes);
 
     ScrollTrigger.create({
       trigger: altezza,
@@ -378,6 +364,57 @@
       end: "bottom bottom",
       scrub: true,
     });
+
+    /* ── mobile: solo il cerchio delle parole, com'era ── */
+    if (window.innerWidth <= 820) {
+      const baseSin = 148, corsaSin = 245, passoSin = 13;
+      gsap.set(sinistra, { xPercent: -62, yPercent: -50, rotation: baseSin });
+      const raggiSin = prepara(sinistra, baseSin, 1, passoSin);
+      gsap.to(sinistra, { rotation: baseSin - corsaSin, ease: "none", scrollTrigger: scrub() });
+      raggiSin.forEach((raggio) => {
+        gsap.to(raggio.firstElementChild, { rotation: "+=" + corsaSin, ease: "none", scrollTrigger: scrub() });
+      });
+      return;
+    }
+
+    /* ── desktop: coreografia in quattro tempi ──
+       1) si arriva e c'è solo il titolo, fermo (0–10% del pin);
+       2) le due palle entrano da fuori schermo (10–36%) e si fermano
+          in obliquo: parole in basso a sinistra, foto in alto a destra,
+          coi contenuti che quasi si toccano lungo la diagonale;
+       3) il titolo, ormai coperto, sparisce con un soffio (36–44%);
+       4) la giostra continua: parole che salgono, foto che scendono.
+       Le finestre di sfilata puntano verso il centro dello schermo:
+       +59° per la palla in basso a sinistra, −121° per quella in alto
+       a destra (ore 3 e ore 9 ruotate sull'obliqua). */
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const D = sinistra.offsetWidth, r = D / 2;
+    const lung = Math.hypot(vw / 2, vh / 2);
+    const u = { x: (-vw / 2) / lung, y: (vh / 2) / lung }; /* verso l'angolo in basso a sinistra */
+    const dist = r + 80; /* i bordi restano a ~160px: tessere e parole quasi si toccano */
+
+    const centroSin = { x: vw / 2 + u.x * dist, y: vh / 2 + u.y * dist };
+    const centroDes = { x: vw / 2 - u.x * dist, y: vh / 2 - u.y * dist };
+
+    const riposoSinX = centroSin.x - D / 2;
+    const riposoDesX = centroDes.x - (vw - D / 2);
+    const fuoriSinX = -(r + 60) - D / 2;
+    const fuoriDesX = r + 60 + D / 2;
+
+    const passoSin = 13, corsaSin = 193, baseSin = 136;
+    const passoDes = 34, corsaDes = 315, baseDes = 5;
+
+    gsap.set(sinistra, { x: fuoriSinX, y: centroSin.y - vh / 2, yPercent: -50, rotation: baseSin });
+    gsap.set(destra, { x: fuoriDesX, y: centroDes.y - vh / 2, yPercent: -50, rotation: baseDes });
+    const raggiSin = prepara(sinistra, baseSin, 1, passoSin);
+    const raggiDes = prepara(destra, baseDes, 1, passoDes);
+
+    const coreografia = gsap.timeline({ scrollTrigger: scrub() });
+    coreografia
+      .to(sinistra, { x: riposoSinX, duration: 0.26, ease: "power2.out" }, 0.10)
+      .to(destra, { x: riposoDesX, duration: 0.26, ease: "power2.out" }, 0.10)
+      .to(testa, { y: -48, autoAlpha: 0, filter: "blur(8px)", duration: 0.08, ease: "power1.in" }, 0.37)
+      .set(quadro, {}, 1); /* àncora: la scala del tempo resta 0–1 sul pin */
 
     gsap.to(sinistra, { rotation: baseSin - corsaSin, ease: "none", scrollTrigger: scrub() });
     raggiSin.forEach((raggio) => {
