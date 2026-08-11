@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maso Coler ▪ Agriturismo in Val di Rabbi, Trentino — un maso tutto per voi</title>
+  <meta name="description" content="Un maso in legno e pietra nel Parco Nazionale dello Stelvio, in esclusiva per famiglie e gruppi: tre camere, nove posti letto, colazioni con i prodotti dell'azienda agricola. Val di Rabbi, Trentino.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Maso Coler ▪ Agriturismo in Val di Rabbi">
+  <meta property="og:description" content="L'intero maso in esclusiva: tre camere, nove posti letto, colazioni dell'azienda agricola. Nel Parco Nazionale dello Stelvio.">
+  <meta property="og:image" content="https://lucsal2603.github.io/masocoler/img/maso-estate.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080605'/><path d='M18 60 L50 30 L82 60' fill='none' stroke='%23C7B491' stroke-width='6'/><path d='M30 60 L30 80 L70 80 L70 60' fill='none' stroke='%23C7B491' stroke-width='6'/><circle cx='50' cy='16' r='5' fill='%23B44A32'/></svg>">
+</head>
+<body>
+
+  <!-- ══════════ LOADER ══════════ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-mark" id="loaderMark">
+      <span class="loader-sopra">AGRITURISMO ▪ VAL DI RABBI</span>
+      <span class="loader-nome">Maso Coler</span>
+      <span class="loader-sotto">PARCO NAZIONALE DELLO STELVIO</span>
+    </div>
+  </div>
+
+  <!-- ══════════ GRANA PELLICOLA ══════════ -->
+  <div class="grana" aria-hidden="true"></div>
+
+  <!-- ══════════ CURSORE ══════════ -->
+  <div class="cursore" id="cursore" aria-hidden="true">
+    <div class="cursore-punto"></div>
+    <div class="cursore-trascina">TRASCINA</div>
+  </div>
+
+  <!-- ══════════ CHIP OSPITE FISSA ══════════ -->
+  <aside class="chip-ospite" id="chipOspite">
+    <div class="chip-foto">
+      <img src="img/cortile-panca.jpg" alt="La panca di legno nel cortile del maso" loading="lazy">
+    </div>
+    <div class="chip-testi">
+      <p class="chip-titolo">IL MASO RISPONDE</p>
+      <p class="chip-sotto">Maso Coler</p>
+    </div>
+    <a href="#prenota" class="link-quadre chip-link" data-roll>[&nbsp;&nbsp;PRENOTA&nbsp;&nbsp;]</a>
+  </aside>
+
+  <main class="involucro">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="sezione-hero" id="inizio">
+      <div class="hero-fondale">
+        <div class="hero-foto">
+          <img src="img/maso-estate.jpg" alt="Maso Coler d'estate: la casa in legno e pietra sul pendio, circondata dal bosco di abeti" fetchpriority="high">
+          <div class="slot-angoli" aria-hidden="true"></div>
+        </div>
+        <div class="hero-alone" aria-hidden="true"></div>
+        <div class="hero-velo" aria-hidden="true"></div>
+      </div>
+
+      <header class="menu" id="menu">
+        <div class="menu-griglia">
+          <a href="#inizio" class="menu-brand" aria-label="Maso Coler, torna all'inizio">
+            <span class="menu-brand-nome">MASO COLER</span>
+            <span class="menu-brand-sotto">AGRITURISMO ▪ VAL DI RABBI</span>
+          </a>
+          <nav class="menu-gruppi" aria-label="Navigazione principale">
+            <div class="menu-gruppo">
+              <p class="menu-voce-titolo">SOGGIORNO</p>
+              <a class="link-quadre" data-roll href="#stanze">[&nbsp;&nbsp;LE&nbsp;CAMERE&nbsp;&nbsp;]</a>
+              <a class="link-quadre" data-roll href="#terra">[&nbsp;&nbsp;LA&nbsp;COLAZIONE&nbsp;&nbsp;]</a>
+            </div>
+            <div class="menu-gruppo">
+              <p class="menu-voce-titolo">IL MASO</p>
+              <a class="link-quadre" data-roll href="#manifesto">[&nbsp;&nbsp;IL&nbsp;MANIFESTO&nbsp;&nbsp;]</a>
+              <a class="link-quadre" data-roll href="#valle">[&nbsp;&nbsp;LA&nbsp;VALLE&nbsp;&nbsp;]</a>
+              <a class="link-quadre" data-roll href="#prenota">[&nbsp;&nbsp;CONTATTI&nbsp;&nbsp;]</a>
+            </div>
+          </nav>
+          <div class="menu-coda">
+            <span class="menu-stagione">L'INTERO MASO ▪ FINO A NOVE OSPITI</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="hero-corpo">
+        <h1 class="hero-titolo" id="heroTitolo">
+          <span class="hero-riga">La fretta si ferma <em>a valle.</em></span>
+          <span class="hero-riga">Il maso sta più <em>in su.</em></span>
+        </h1>
+        <div class="hero-righe" id="heroRighe">
+          <p class="hero-voce">AGRITURISMO IN LEGNO E PIETRA NEL PARCO NAZIONALE DELLO STELVIO</p>
+          <p class="hero-voce">L'INTERA STRUTTURA IN ESCLUSIVA: TRE CAMERE, NOVE POSTI LETTO</p>
+          <p class="hero-voce hero-voce-accento">IL NOSTRO MESTIERE ▸ LASCIARVI IL MASO TUTTO PER VOI</p>
+        </div>
+      </div>
+
+      <div class="hero-piede">
+        <span class="hero-scorri">SCORRETE PIANO</span>
+        <span class="hero-freccia" aria-hidden="true">↓</span>
+      </div>
+    </section>
+
+    <!-- ══════════ MANIFESTO PINNATO ══════════ -->
+    <section class="sezione-manifesto" id="manifesto">
+      <div class="manifesto-altezza" id="manifestoAltezza">
+        <div class="manifesto-quadro" id="manifestoQuadro">
+          <p class="etichetta manifesto-etichetta">IL MASO ⌾ MANIFESTO</p>
+          <div class="manifesto-testi" id="manifestoTesti">
+            <p class="manifesto-brano">MASO COLER È UN MASO IN LEGNO E PIETRA DELLA VAL DI RABBI: UN TEMPO FIENILE E STALLA DEI NONNI, OGGI AGRITURISMO DI FAMIGLIA, RISTRUTTURATO NEL 2012 SECONDO I CRITERI CASACLIMA.</p>
+            <p class="manifesto-brano">SI PRENOTA SOLO PER INTERO: TRE CAMERE, NOVE POSTI LETTO, LA CUCINA A DISPOSIZIONE E NESSUN ALTRO OSPITE. LA SERA RESTANO IL RUSCELLO, IL BOSCO E UN CIELO PIENO DI STELLE.</p>
+            <p class="manifesto-brano">NON È UNA VACANZA MORDI E FUGGI: SI ARRIVA OSPITI E SI RIPARTE CON IL PASSO LENTO DELLA MONTAGNA E IL PROFUMO DEL LEGNO ADDOSSO.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ COSA VI ASPETTA ══════════ -->
+    <section class="sezione-servizi" id="tavola">
+      <div class="servizi-testa">
+        <p class="etichetta" data-reveal-parole>L'OSPITALITÀ ⌾ COSA VI ASPETTA</p>
+        <h2 class="titolone" data-titolo-maschera>Il maso è<br>tutto <em>vostro</em></h2>
+        <p class="citazione" data-reveal-parole>LA GIORNATA SEGUE IL SOLE: COLAZIONE, SENTIERI E SERE DAVANTI AL CAMINO, SENZA ORARI IMPOSTI.</p>
+      </div>
+
+      <ul class="lista-direzionale" id="listaDirezionale">
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Le camere</h3>
+            <p class="voce-sotto">TRE, TUTTE CON BAGNO PRIVATO</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">La colazione</h3>
+            <p class="voce-sotto">DALL'AZIENDA AGRICOLA, OGNI MATTINA</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">La cucina</h3>
+            <p class="voce-sotto">ATTREZZATA, A VOSTRA DISPOSIZIONE</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">La sala</h3>
+            <p class="voce-sotto">CAMINO E TAVOLATE, AL PIANO TERRA</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ══════════ BANDA SCURA: LA COLAZIONE + LE CAMERE ══════════ -->
+    <section class="sezione-scura" id="terra">
+      <svg class="strappo strappo-alto" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,70 L0,34 L48,41 L96,28 L163,44 L221,24 L280,39 L338,20 L420,42 L488,26 L560,38 L631,18 L700,36 L764,24 L830,40 L897,22 L960,35 L1030,19 L1099,38 L1163,25 L1230,41 L1297,23 L1360,37 L1400,28 L1440,36 L1440,70 Z"></path>
+      </svg>
+
+      <div class="scura-contenuto">
+
+        <!-- RUOTA DELLA COLAZIONE -->
+        <div class="ruota" id="ruota">
+          <div class="ruota-altezza" id="ruotaAltezza">
+            <div class="ruota-quadro" id="ruotaQuadro">
+              <div class="ruota-testa">
+                <p class="etichetta" data-reveal-parole>IL MATTINO ⌾ LA COLAZIONE DEL MASO</p>
+                <h2 class="titolone titolone-ruota" data-titolo-maschera>La stalla di ieri,<br>la tavola di <em>oggi</em></h2>
+              </div>
+              <div class="ruota-cerchio ruota-cerchio-sinistra" id="ruotaSinistra" aria-hidden="true">
+                <div class="ruota-raggio"><span class="ruota-parola">CAMINO</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">TORTE</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">FORNO</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">BUFFET</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">SALATO</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">TAVOLA</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">CUCINA</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">SALA</span></div>
+                <div class="ruota-raggio"><span class="ruota-parola">CIRMOLO</span></div>
+              </div>
+              <div class="ruota-cerchio ruota-cerchio-destra" id="ruotaDestra" aria-hidden="true">
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-camino.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-torte.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-forno.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-buffet.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-salato.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-tavola.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-cucina.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-sala.jpg" alt="" loading="lazy"></span></div>
+                <div class="ruota-raggio"><span class="ruota-tessera"><img src="img/t-cirmolo.jpg" alt="" loading="lazy"></span></div>
+              </div>
+              <p class="ruota-nota">LA RUOTA GIRA CON LO SCORRIMENTO ▪ FATTO IN CASA E DEL TERRITORIO, OGNI MATTINA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDER CAMERE -->
+        <div class="stanze" id="stanze">
+          <div class="stanze-testa">
+            <div>
+              <p class="etichetta" data-reveal-parole>IL SONNO ⌾ TRE CAMERE, NOVE LETTI</p>
+              <h2 class="titolone" data-titolo-maschera>Dormire<br>dov'era il <em>fieno</em></h2>
+            </div>
+            <div class="stanze-contatore" aria-live="polite">
+              <span class="contatore-voce">CAMERA</span>
+              <span class="contatore-numeri"><span id="contatoreAttuale">DOPPIA</span>&nbsp;▪&nbsp;<span id="contatoreTotale">TRE CAMERE</span></span>
+            </div>
+          </div>
+
+          <div class="scia" id="scia">
+            <div class="scia-binario" id="sciaBinario">
+              <article class="scia-carta" data-nome="DOPPIA">
+                <div class="scia-quadro">
+                  <div class="scia-parallasse">
+                    <img class="foto-stanza" src="img/camera-doppia.jpg" alt="La camera doppia: letto matrimoniale e pareti rivestite in legno" loading="lazy">
+                  </div>
+                </div>
+                <div class="scia-didascalia">
+                  <h3 class="scia-nome">Camera doppia</h3>
+                  <dl class="scia-specifiche">
+                    <div><dt>LETTO</dt><dd>MATRIMONIALE</dd></div>
+                    <div><dt>BAGNO</dt><dd>PRIVATO, CON DOCCIA</dd></div>
+                    <div><dt>ATTORNO</dt><dd>LEGNO DI CIRMOLO</dd></div>
+                  </dl>
+                </div>
+              </article>
+
+              <article class="scia-carta" data-nome="TRIPLA">
+                <div class="scia-quadro">
+                  <div class="scia-parallasse">
+                    <img class="foto-stanza" src="img/camera-tripla.jpg" alt="La camera tripla, arredata in stile di montagna" loading="lazy">
+                  </div>
+                </div>
+                <div class="scia-didascalia">
+                  <h3 class="scia-nome">Camera tripla</h3>
+                  <dl class="scia-specifiche">
+                    <div><dt>POSTI LETTO</dt><dd>TRE</dd></div>
+                    <div><dt>BAGNO</dt><dd>PRIVATO, CON DOCCIA</dd></div>
+                    <div><dt>VISTA</dt><dd>PRATI E BOSCHI</dd></div>
+                  </dl>
+                </div>
+              </article>
+
+              <article class="scia-carta" data-nome="QUADRUPLA">
+                <div class="scia-quadro">
+                  <div class="scia-parallasse">
+                    <img class="foto-stanza" src="img/camera-soppalco.jpg" alt="Il soppalco della camera quadrupla, con i letti sotto le travi del tetto" loading="lazy">
+                  </div>
+                </div>
+                <div class="scia-didascalia">
+                  <h3 class="scia-nome">Camera quadrupla</h3>
+                  <dl class="scia-specifiche">
+                    <div><dt>POSTI LETTO</dt><dd>QUATTRO</dd></div>
+                    <div><dt>SOPPALCO</dt><dd>SOTTO LE TRAVI DEL TETTO</dd></div>
+                    <div><dt>BAGNO</dt><dd>PRIVATO, CON DOCCIA</dd></div>
+                  </dl>
+                </div>
+              </article>
+            </div>
+            <p class="scia-suggerimento" aria-hidden="true">◂&nbsp;&nbsp;TRASCINATE&nbsp;&nbsp;▸</p>
+          </div>
+        </div>
+
+      </div>
+
+      <svg class="strappo strappo-basso" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 L0,36 L52,29 L104,42 L168,26 L226,40 L285,22 L343,38 L425,20 L493,41 L565,27 L636,44 L705,24 L769,38 L835,21 L902,39 L965,26 L1035,42 L1104,23 L1168,37 L1235,20 L1302,40 L1365,26 L1405,38 L1440,30 L1440,0 Z"></path>
+      </svg>
+    </section>
+
+    <!-- ══════════ LA VALLE ══════════ -->
+    <section class="sezione-valle" id="valle">
+      <div class="servizi-testa">
+        <p class="etichetta" data-reveal-parole>LA VALLE ⌾ PARCO NAZIONALE DELLO STELVIO</p>
+        <h2 class="titolone" data-titolo-maschera>La valle<br>fuori dalla <em>porta</em></h2>
+        <p class="citazione" data-reveal-parole>UNA VALLE LATERALE E TRANQUILLA DELLA VAL DI SOLE: SI VIENE QUI PER CAMMINARE, NON PER FARE LA FILA.</p>
+      </div>
+
+      <div class="valle-quadri">
+        <figure class="valle-figura-blocco">
+          <div class="valle-figura">
+            <img src="img/maso-ruscello.jpg" alt="Il maso d'estate visto dal ruscello, tra i massi e gli abeti" loading="lazy">
+            <div class="slot-angoli" aria-hidden="true"></div>
+          </div>
+          <figcaption class="valle-dida">L'ESTATE ▸ IL RUSCELLO SOTTO IL MASO</figcaption>
+        </figure>
+        <figure class="valle-figura-blocco">
+          <div class="valle-figura">
+            <img src="img/maso-inverno.jpg" alt="Il maso d'inverno, coperto di neve tra i boschi imbiancati" loading="lazy">
+            <div class="slot-angoli" aria-hidden="true"></div>
+          </div>
+          <figcaption class="valle-dida">L'INVERNO ▸ IL MASO SOTTO LA NEVE</figcaption>
+        </figure>
+      </div>
+
+      <ul class="lista-direzionale lista-sei">
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Saènt</h3>
+            <p class="voce-sotto">LE CASCATE, L'ANELLO NEL PARCO</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Il ponte</h3>
+            <p class="voce-sotto">LA PASSERELLA SOSPESA SUL RAGAIOLO</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Le malghe</h3>
+            <p class="voce-sotto">FRATTE, STABLASOLO, MONTE SOLE</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Le terme</h3>
+            <p class="voce-sotto">LO STABILIMENTO DI RABBI FONTI</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">Kneipp</h3>
+            <p class="voce-sotto">A PIEDI NUDI, IN LOCALITÀ COLER</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+        <li class="lista-voce" data-voce-direzionale>
+          <div class="voce-velo" aria-hidden="true"></div>
+          <div class="voce-corpo">
+            <h3 class="voce-titolo">La neve</h3>
+            <p class="voce-sotto">CIASPOLE, FONDO E SCI IN VAL DI SOLE</p>
+            <span class="voce-freccia" aria-hidden="true">↘</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ══════════ CTA FINALE ══════════ -->
+    <section class="sezione-prenota" id="prenota">
+      <div class="prenota-griglia">
+        <div class="prenota-ritratto">
+          <div class="slot-ritratto foto-quadro">
+            <img src="img/cortile-panca.jpg" alt="Il muro in pietra del maso con la panca di legno, le ortensie e la targa Agritur Maso Coler" loading="lazy">
+            <div class="slot-angoli" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="prenota-corpo">
+          <div class="prenota-verticale" aria-hidden="true">
+            <span class="verticale-colonna" data-verticale>SCRIVETECI</span>
+          </div>
+          <div class="prenota-testi">
+            <p class="etichetta" data-reveal-parole>LA POSTA ⌾ GESTIONE FAMILIARE</p>
+            <h2 class="titolone" data-titolo-maschera>La montagna<br>non <em>aspetta.</em><br>Il maso <em>nemmeno.</em></h2>
+            <p class="citazione" data-reveal-parole>DITECI QUANDO VOLETE VENIRE E IN QUANTI SIETE: VI RISPONDE LA FAMIGLIA, NON UN CENTRALINO.</p>
+            <a href="https://masocoler.kross.travel/" target="_blank" rel="noopener" class="bottone" data-bottone-roll>
+              <span class="bottone-testo">VERIFICATE LE DATE</span>
+              <span class="bottone-freccia" aria-hidden="true">↗</span>
+            </a>
+            <div class="prenota-recapiti">
+              <p><span>LETTERE</span><a href="mailto:masocoler@gmail.com">masocoler@gmail.com</a></p>
+              <p><span>TELEFONO</span><a href="tel:+393347075738">334 707 5738</a> ▪ ANCHE WHATSAPP</p>
+              <p><span>DOVE</span>FRAZIONE PIAZZOLA 171/D ▪ RABBI (TN), VAL DI RABBI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="sezione-footer">
+      <div class="footer-alto">
+        <div class="footer-colonna footer-dove">
+          <p class="menu-voce-titolo">MASO COLER</p>
+          <p class="footer-riga">AGRITURISMO IN VAL DI RABBI ▪ TRENTINO</p>
+          <p class="footer-riga">FRAZIONE PIAZZOLA 171/D ▪ 38020 RABBI (TN)</p>
+          <p class="footer-riga">PARCO NAZIONALE DELLO STELVIO</p>
+        </div>
+        <div class="footer-colonna">
+          <p class="menu-voce-titolo">SOGGIORNO</p>
+          <a class="link-quadre" data-roll href="#stanze">[&nbsp;&nbsp;LE&nbsp;CAMERE&nbsp;&nbsp;]</a>
+          <a class="link-quadre" data-roll href="#terra">[&nbsp;&nbsp;LA&nbsp;COLAZIONE&nbsp;&nbsp;]</a>
+          <a class="link-quadre" data-roll href="#prenota">[&nbsp;&nbsp;PRENOTARE&nbsp;&nbsp;]</a>
+        </div>
+        <div class="footer-colonna">
+          <p class="menu-voce-titolo">IL MASO</p>
+          <a class="link-quadre" data-roll href="#manifesto">[&nbsp;&nbsp;IL&nbsp;MANIFESTO&nbsp;&nbsp;]</a>
+          <a class="link-quadre" data-roll href="#valle">[&nbsp;&nbsp;LA&nbsp;VALLE&nbsp;&nbsp;]</a>
+          <a class="link-quadre" data-roll href="#inizio">[&nbsp;&nbsp;L'INIZIO&nbsp;&nbsp;]</a>
+        </div>
+        <div class="footer-colonna">
+          <p class="menu-voce-titolo">SEGUITECI</p>
+          <a class="link-quadre" data-roll href="https://instagram.com/agriturmasocoler" target="_blank" rel="noopener">[&nbsp;&nbsp;INSTAGRAM&nbsp;&nbsp;]</a>
+          <a class="link-quadre" data-roll href="https://www.facebook.com/masocoler/" target="_blank" rel="noopener">[&nbsp;&nbsp;FACEBOOK&nbsp;&nbsp;]</a>
+        </div>
+      </div>
+
+      <div class="footer-marchio" aria-hidden="true">
+        <span class="marchio-gigante" id="marchioGigante">MASO COLER</span>
+      </div>
+
+      <div class="footer-basso">
+        <div class="linea-sabbia" aria-hidden="true"></div>
+        <div class="footer-basso-righe">
+          <p>© 2026 MASO COLER ▪ SITO DIMOSTRATIVO</p>
+          <p>UN MASO TUTTO PER VOI, IN VAL DI RABBI</p>
+          <p>SITO DI LUCA SALVEMINI</p>
+        </div>
+        <div class="linea-sabbia" aria-hidden="true"></div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
