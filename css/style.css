@@ -717,8 +717,8 @@ a:focus-visible, button:focus-visible {
 
 .titolone-ruota { font-size: clamp(46px, 7vw, 110px); }
 
-/* niente linea-guida: le palle viaggiano libere, sopra il titolo (z 6 > z 5),
-   così mentre entrano lo coprono davvero */
+/* le palle stanno sopra il titolo (z 6 > z 5): mentre entrano lo coprono.
+   La linea-guida viaggia con la palla: compare solo quando compaiono loro */
 .ruota-cerchio {
   position: absolute;
   top: 50%;
@@ -726,6 +726,14 @@ a:focus-visible, button:focus-visible {
   aspect-ratio: 1;
   pointer-events: none;
   z-index: 6;
+}
+
+.ruota-cerchio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--sabbia-linea);
+  border-radius: 50%;
 }
 
 /* la traslazione dei cerchi la gestisce GSAP (xPercent/yPercent):
