@@ -720,7 +720,7 @@ a:focus-visible, button:focus-visible {
 .ruota-cerchio {
   position: absolute;
   top: 50%;
-  width: min(94vh, 62vw);
+  width: min(118vh, 80vw);
   aspect-ratio: 1;
   pointer-events: none;
 }
@@ -756,11 +756,12 @@ a:focus-visible, button:focus-visible {
 
 .ruota-tessera {
   display: block;
-  width: clamp(64px, 7vw, 104px);
-  height: clamp(64px, 7vw, 104px);
+  width: clamp(170px, 19vw, 290px);
+  aspect-ratio: 4 / 5;
   will-change: transform;
   overflow: hidden;
   border: 1px solid var(--sabbia-linea);
+  background: var(--nero-banda);
 }
 
 .ruota-tessera img {

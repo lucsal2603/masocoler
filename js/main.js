@@ -336,10 +336,15 @@
     const quadro = document.getElementById("ruotaQuadro");
     const sinistra = document.getElementById("ruotaSinistra");
     const destra = document.getElementById("ruotaDestra");
-    const passo = 13;
-    const corsa = 245; /* gradi percorsi durante il pin */
 
-    function prepara(cerchio, base, direzione) {
+    /* Entrambi i cerchi girano in senso antiorario: così le parole
+       (finestra di ore 3) salgono e le tessere (ore 9) scendono.
+       Le tessere sono grandi, quindi passo largo: ne sfila una
+       alla volta, dietro al titolo. */
+    const passoSin = 13, corsaSin = 245;
+    const passoDes = 30, corsaDes = 335;
+
+    function prepara(cerchio, base, direzione, passo) {
       const raggi = cerchio.querySelectorAll(".ruota-raggio");
       raggi.forEach((raggio, i) => {
         gsap.set(raggio, { rotation: direzione * i * passo });
@@ -351,13 +356,13 @@
       return raggi;
     }
 
-    const baseSin = 148;   /* le parole aspettano sotto la finestra di ore 3 */
-    const baseDes = -148;  /* le tessere aspettano sotto quella di ore 9 */
+    const baseSin = 148; /* le parole aspettano sotto la finestra di ore 3 */
+    const baseDes = -45; /* le tessere aspettano sopra quella di ore 9 */
 
-    gsap.set(sinistra, { xPercent: -58, yPercent: -50, rotation: baseSin });
-    gsap.set(destra, { xPercent: 58, yPercent: -50, rotation: baseDes });
-    const raggiSin = prepara(sinistra, baseSin, 1);
-    const raggiDes = prepara(destra, baseDes, -1);
+    gsap.set(sinistra, { xPercent: -62, yPercent: -50, rotation: baseSin });
+    gsap.set(destra, { xPercent: 62, yPercent: -50, rotation: baseDes });
+    const raggiSin = prepara(sinistra, baseSin, 1, passoSin);
+    const raggiDes = prepara(destra, baseDes, 1, passoDes);
 
     ScrollTrigger.create({
       trigger: altezza,
@@ -374,13 +379,13 @@
       scrub: true,
     });
 
-    gsap.to(sinistra, { rotation: baseSin - corsa, ease: "none", scrollTrigger: scrub() });
+    gsap.to(sinistra, { rotation: baseSin - corsaSin, ease: "none", scrollTrigger: scrub() });
     raggiSin.forEach((raggio) => {
-      gsap.to(raggio.firstElementChild, { rotation: "+=" + corsa, ease: "none", scrollTrigger: scrub() });
+      gsap.to(raggio.firstElementChild, { rotation: "+=" + corsaSin, ease: "none", scrollTrigger: scrub() });
     });
-    gsap.to(destra, { rotation: baseDes + corsa, ease: "none", scrollTrigger: scrub() });
+    gsap.to(destra, { rotation: baseDes - corsaDes, ease: "none", scrollTrigger: scrub() });
     raggiDes.forEach((raggio) => {
-      gsap.to(raggio.firstElementChild, { rotation: "-=" + corsa, ease: "none", scrollTrigger: scrub() });
+      gsap.to(raggio.firstElementChild, { rotation: "+=" + corsaDes, ease: "none", scrollTrigger: scrub() });
     });
   })();
 
