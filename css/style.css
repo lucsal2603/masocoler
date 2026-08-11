@@ -757,23 +757,6 @@ a:focus-visible, button:focus-visible {
   will-change: transform;
 }
 
-.ruota-tessera {
-  display: block;
-  width: clamp(150px, 16.5vw, 250px);
-  aspect-ratio: 4 / 5;
-  will-change: transform;
-  overflow: hidden;
-  border: 1px solid var(--sabbia-linea);
-  background: var(--nero-banda);
-}
-
-.ruota-tessera img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .ruota-nota {
   position: absolute;
   bottom: 30px;

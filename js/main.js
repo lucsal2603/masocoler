@@ -377,21 +377,22 @@
       return;
     }
 
-    /* ── desktop: coreografia in quattro tempi ──
+    /* ── desktop: coreografia in cinque tempi ──
        1) si arriva e c'è solo il titolo, fermo (0–10% del pin);
        2) le due palle entrano da fuori schermo (10–36%) e si fermano
-          in obliquo: parole in basso a sinistra, foto in alto a destra,
-          coi contenuti che quasi si toccano lungo la diagonale;
-       3) il titolo, ormai coperto, sparisce con un soffio (36–44%);
-       4) la giostra continua: parole che salgono, foto che scendono.
-       Le finestre di sfilata puntano verso il centro dello schermo:
-       +59° per la palla in basso a sinistra, −121° per quella in alto
-       a destra (ore 3 e ore 9 ruotate sull'obliqua). */
+          in obliquo, in basso a sinistra e in alto a destra, con gli
+          archi che quasi si toccano al centro (~60px);
+       3) il titolo sparisce con un soffio (37–45%);
+       4) qualche altro scroll con i soli archi vuoti;
+       5) dal ~46–50% sfilano le scritte: su a sinistra, giù a destra.
+       Solo parole, niente foto. Le basi sono scelte così che durante
+       l'ingresso ogni parola aspetti FUORI dall'arco visibile.
+       Finestre di sfilata verso il centro: +59° (sinistra), −121° (destra). */
     const vw = window.innerWidth, vh = window.innerHeight;
     const D = sinistra.offsetWidth, r = D / 2;
     const lung = Math.hypot(vw / 2, vh / 2);
     const u = { x: (-vw / 2) / lung, y: (vh / 2) / lung }; /* verso l'angolo in basso a sinistra */
-    const dist = r + 80; /* i bordi restano a ~160px: tessere e parole quasi si toccano */
+    const dist = r + 30; /* archi a ~60px al centro: quasi si toccano */
 
     const centroSin = { x: vw / 2 + u.x * dist, y: vh / 2 + u.y * dist };
     const centroDes = { x: vw / 2 - u.x * dist, y: vh / 2 - u.y * dist };
@@ -401,8 +402,8 @@
     const fuoriSinX = -(r + 60) - D / 2;
     const fuoriDesX = r + 60 + D / 2;
 
-    const passoSin = 13, corsaSin = 193, baseSin = 136;
-    const passoDes = 34, corsaDes = 315, baseDes = 5;
+    const passoSin = 13, corsaSin = 312, baseSin = 248;
+    const passoDes = 13, corsaDes = 296, baseDes = 66;
 
     gsap.set(sinistra, { x: fuoriSinX, y: centroSin.y - vh / 2, yPercent: -50, rotation: baseSin });
     gsap.set(destra, { x: fuoriDesX, y: centroDes.y - vh / 2, yPercent: -50, rotation: baseDes });

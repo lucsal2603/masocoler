@@ -15,7 +15,8 @@ Assunzioni mie, da correggere se sbagliate:
 
 - **Il soppalco è attribuito alla camera quadrupla** (il sito dice solo "due camere nel sottotetto hanno soppalco", senza dire quali)
 - **"Legno di cirmolo" attribuito alla camera doppia** (le foto dei dettagli in cirmolo non indicano la stanza)
-- Le didascalie/abbinamenti parola-foto della ruota derivano dai nomi dei file del sito attuale
+- Le parole della ruota di sinistra derivano dai nomi dei file foto del sito attuale
+- **Le 8 parole della ruota di destra (CROSTATE, MIELE, LATTE, YOGURT, SPECK, CONFETTURE, PANE, BURRO) sono voci di colazione inventate da me**: da confermare col cliente che siano davvero nel buffet
 - Nessuna indicazione di stagione/periodo di apertura (il sito attuale non la riporta)
 - Copy d'atmosfera ("La fretta si ferma a valle", "La stalla di ieri, la tavola di oggi", manifesto) è proposta creativa, non testo del cliente
 
