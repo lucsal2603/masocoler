@@ -104,7 +104,8 @@
         const rc = document.createElement("span");
         rc.className = "rc";
         const dentro = document.createElement("span");
-        const visibile = ch === " " ? " " : ch;
+        /* lo spazio deve restare largo dentro gli span inline-block */
+        const visibile = ch === " " || ch === "\u00A0" ? "\u00A0" : ch;
         dentro.textContent = visibile;
         dentro.dataset.lettera = visibile;
         dentro.style.setProperty("--ritardo", (indice * 0.018).toFixed(3) + "s");
@@ -158,7 +159,7 @@
     });
     const accendi = () => cursore.classList.add("acceso");
     const spegni = () => cursore.classList.remove("acceso");
-    document.querySelectorAll("a, .bottone").forEach((el) => {
+    document.querySelectorAll("a, .bottone, button").forEach((el) => {
       el.addEventListener("mouseenter", accendi);
       el.addEventListener("mouseleave", spegni);
     });

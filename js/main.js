@@ -489,6 +489,17 @@
       });
     });
 
+    /* trackpad e Magic Mouse: lo scorrimento orizzontale a due dita
+       muove lo slider; quello verticale resta alla pagina */
+    contenitore.addEventListener("wheel", (e) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      obiettivo -= e.deltaX;
+    }, { passive: false });
+
+    /* il trascinamento non deve mai "prendere" l'immagine */
+    contenitore.addEventListener("dragstart", (e) => e.preventDefault());
+
     const nomi = originali.map((c) => c.dataset.nome);
 
     gsap.ticker.add(() => {
