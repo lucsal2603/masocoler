@@ -145,6 +145,18 @@
     });
   });
 
+  /* arrivo con àncora da un'altra pagina (es. contatti.html#disponibilita):
+     si atterra già sulla sezione, senza sceneggiata */
+  if (location.hash) {
+    const meta = document.querySelector(location.hash);
+    if (meta) {
+      requestAnimationFrame(() => {
+        lenis.scrollTo(meta, { immediate: true, offset: -20 });
+        ScrollTrigger.refresh();
+      });
+    }
+  }
+
   preparaRulli();
 
   /* ════════════ CURSORE QUADRATO ════════════ */

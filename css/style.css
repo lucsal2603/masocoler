@@ -279,6 +279,9 @@ a:focus-visible, button:focus-visible {
 
 .bottone:hover .bottone-freccia { transform: translate(3px, -3px); }
 
+/* variante: il bottone porta in basso, dentro il sito */
+.bottone[data-verso="giu"]:hover .bottone-freccia { transform: translate(3px, 3px); }
+
 /* ═══════════ QUADRI FOTOGRAFICI (cornici con angoli) ═══════════ */
 
 .foto-quadro {
