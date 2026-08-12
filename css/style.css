@@ -110,13 +110,24 @@ a:focus-visible, button:focus-visible {
   color: var(--sabbia);
 }
 
-.loader-nome {
-  font-family: var(--serif);
-  font-size: clamp(44px, 9vw, 104px);
-  line-height: 0.9;
-  color: var(--crema);
-  white-space: nowrap;
+/* ═══════════ LOGO UFFICIALE (PNG bianco mascherato e tinto crema) ═══════════ */
+
+.logo-maso {
+  display: block;
+  aspect-ratio: 420 / 100;
+  background-color: var(--crema);
+  -webkit-mask: url("../img/logo-masocoler.png") no-repeat center / contain;
+  mask: url("../img/logo-masocoler.png") no-repeat center / contain;
 }
+
+/* senza supporto alle maschere: il PNG bianco così com'è */
+@supports not ((-webkit-mask: url("")) or (mask: url(""))) {
+  .logo-maso {
+    background: url("../img/logo-masocoler.png") no-repeat center / contain;
+  }
+}
+
+.loader-logo { width: clamp(200px, 24vw, 260px); }
 
 /* ═══════════ CURSORE ═══════════ */
 
@@ -445,15 +456,9 @@ a:focus-visible, button:focus-visible {
   gap: 24px;
 }
 
-.menu-brand { display: flex; flex-direction: column; gap: 4px; }
+.menu-brand { display: flex; flex-direction: column; gap: 7px; }
 
-.menu-brand-nome {
-  font-family: var(--serif);
-  font-size: 30px;
-  letter-spacing: 0.08em;
-  color: var(--crema);
-  line-height: 1;
-}
+.menu-brand-logo { width: clamp(138px, 12vw, 168px); }
 
 .menu-brand-sotto {
   font-size: 9px;
@@ -1071,6 +1076,8 @@ a:focus-visible, button:focus-visible {
   line-height: 1.9;
   color: var(--crema-fioca);
 }
+
+.footer-logo { width: 150px; margin-bottom: 8px; }
 
 .footer-marchio {
   overflow: hidden;
