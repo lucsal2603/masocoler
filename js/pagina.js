@@ -171,9 +171,12 @@
     });
     const accendi = () => cursore.classList.add("acceso");
     const spegni = () => cursore.classList.remove("acceso");
-    document.querySelectorAll("a, .bottone, button").forEach((el) => {
-      el.addEventListener("mouseenter", accendi);
-      el.addEventListener("mouseleave", spegni);
+    /* delega: vale anche per gli elementi nati dopo (es. i giorni del calendario) */
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest("a, .bottone, button")) accendi();
+    });
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest("a, .bottone, button")) spegni();
     });
   }
 

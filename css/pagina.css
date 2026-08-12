@@ -380,6 +380,111 @@ button.banco-campo:hover { background: var(--pesca); }
   color: var(--sabbia);
 }
 
+/* il campo che sta scegliendo resta acceso */
+button.banco-campo.in-scelta { background: var(--pesca); }
+
+/* ═══════════ IL CALENDARIO DEL MASO ═══════════ */
+
+.calendario {
+  position: absolute;
+  z-index: 10;
+  background: var(--crema);
+  color: var(--terra);
+  border: 1px solid rgba(58, 36, 16, 0.4);
+  padding: clamp(18px, 2vw, 26px);
+  opacity: 0;
+  transform: translateY(6px);
+  visibility: hidden;
+  transition: opacity 0.22s var(--morbido), transform 0.22s var(--morbido), visibility 0.22s;
+}
+
+.calendario.aperto {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.calendario-testa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.calendario-mese {
+  font-family: var(--serif);
+  font-size: clamp(20px, 1.8vw, 26px);
+  color: var(--terra);
+}
+
+.calendario-freccia { font-size: 16px; }
+
+.calendario-settimana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.calendario-settimana span {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--ruggine);
+  padding: 6px 0;
+}
+
+.calendario-griglia {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.giorno {
+  aspect-ratio: 1;
+  min-height: 34px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--terra);
+  cursor: none;
+  transition: background-color 0.2s var(--morbido), color 0.2s var(--morbido);
+}
+
+@media (hover: none) {
+  .giorno { cursor: auto; }
+}
+
+.giorno:hover:not(:disabled) { background: var(--pesca); }
+
+.giorno.oggi { border-color: rgba(58, 36, 16, 0.35); }
+
+.giorno.compreso { background: rgba(58, 36, 16, 0.08); }
+
+.giorno.estremo { background: rgba(58, 36, 16, 0.16); }
+
+.giorno.scelto,
+.giorno.scelto:hover {
+  background: var(--terra);
+  color: var(--pesca);
+}
+
+.giorno:disabled {
+  opacity: 0.25;
+  cursor: auto;
+}
+
+.calendario-nota {
+  margin-top: 12px;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: var(--ruggine);
+  text-align: right;
+}
+
 /* ═══════════ CTA DI PAGINA ═══════════ */
 
 .pagina-cta {
