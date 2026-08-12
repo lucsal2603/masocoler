@@ -31,12 +31,17 @@ html { scrollbar-width: thin; scrollbar-color: var(--sabbia) var(--nero); }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
+/* niente varchi laterali, nemmeno su iOS (dove il solo body non basta) */
+html, body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 body {
   background: var(--nero);
   color: var(--crema);
   font-family: var(--sans);
   font-weight: 300;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   cursor: none;
 }
@@ -73,11 +78,20 @@ a:focus-visible, button:focus-visible {
 
 /* ═══════════ GRANA PELLICOLA ═══════════ */
 
+/* il contenitore resta a filo viewport: a vibrare è la texture dentro,
+   così la grana non allarga mai la pagina (spazio vuoto a destra su iOS) */
 .grana {
   position: fixed;
-  inset: -100px;
+  inset: 0;
   z-index: 200;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.grana::before {
+  content: "";
+  position: absolute;
+  inset: -100px;
   opacity: 0.055;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)'/%3E%3C/svg%3E");
   animation: grana-vibra 0.7s steps(4) infinite;
@@ -1284,7 +1298,7 @@ a:focus-visible, button:focus-visible {
 /* ═══════════ MOVIMENTO RIDOTTO ═══════════ */
 
 @media (prefers-reduced-motion: reduce) {
-  .grana, .hero-alone, .hero-freccia { animation: none; }
+  .grana::before, .hero-alone, .hero-freccia { animation: none; }
   .manifesto-altezza, .ruota-altezza { height: auto; }
   .manifesto-quadro, .ruota-quadro { height: auto; padding: 80px var(--margine); }
   .manifesto-brano { position: relative; margin-bottom: 30px; }
