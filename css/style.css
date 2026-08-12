@@ -56,6 +56,13 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 em { font-style: italic; }
 
+/* le frecce sono SVG (mai emoji): 1em, seguono il colore del testo */
+.hero-freccia svg, .voce-freccia svg, .bottone-freccia svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
 /* le fotografie non si trascinano né si selezionano: solo da guardare */
 img { -webkit-user-drag: none; user-select: none; }
 
@@ -1190,6 +1197,88 @@ a:focus-visible, button:focus-visible {
   .menu-gruppi { flex-wrap: wrap; gap: 22px; }
   .hero-righe { gap: 6px; }
   .hero-voce { letter-spacing: 0.12em; }
+}
+
+/* ═══════════ TELEFONO: TUTTO IN COLONNA, TUTTO CENTRATO ═══════════ */
+
+@media (max-width: 700px) {
+
+  /* ── hero ricomposto: la foto sta in cornice, alla sua misura vera ── */
+  .sezione-hero { min-height: 0; padding-bottom: 8px; }
+  .menu { order: 1; }
+  .hero-fondale {
+    position: relative;
+    inset: auto;
+    order: 2;
+    margin-top: 28px;
+    overflow: visible;
+  }
+  .hero-foto {
+    position: relative;
+    inset: auto;
+    margin: 0 var(--margine);
+    aspect-ratio: 3 / 2;
+  }
+  .hero-foto img { filter: none; }
+  .hero-alone, .hero-velo { display: none; }
+  .hero-corpo {
+    order: 3;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .hero-titolo { max-width: none; }
+  .hero-righe { align-items: center; }
+  .hero-piede { order: 4; justify-content: center; }
+
+  /* ── menu centrato ── */
+  .menu-griglia { justify-items: center; }
+  .menu-brand { align-items: center; }
+  .menu-gruppi { justify-content: center; gap: 34px; }
+  .menu-gruppo { align-items: center; text-align: center; }
+  .menu-coda { justify-content: center; }
+
+  /* ── teste di sezione e titoli ── */
+  .servizi-testa { align-items: center; text-align: center; }
+  .servizi-testa .citazione { align-self: center; text-align: center; }
+  .stanze-testa { align-items: center; text-align: center; }
+  .stanze-contatore { align-items: center; text-align: center; }
+  .ruota-testa { text-align: center; align-items: center; }
+
+  /* ── card delle liste ── */
+  .voce-corpo { align-items: center; text-align: center; }
+
+  /* ── slider camere ── */
+  .scia-didascalia {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .scia-specifiche { justify-content: center; }
+  .scia-specifiche div { text-align: center; }
+
+  /* ── valle ── */
+  .valle-dida { text-align: center; }
+
+  /* ── CTA finale ── */
+  .prenota-testi { align-items: center; text-align: center; }
+  .prenota-recapiti { align-items: center; }
+  .prenota-recapiti p { text-align: center; }
+  .prenota-recapiti span {
+    display: block;
+    min-width: 0;
+    margin-bottom: 4px;
+  }
+
+  /* ── footer ── */
+  .footer-colonna { align-items: center; text-align: center; }
+  .footer-logo { margin-inline: auto; }
+  .footer-basso-righe {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
 }
 
 /* ═══════════ MOVIMENTO RIDOTTO ═══════════ */

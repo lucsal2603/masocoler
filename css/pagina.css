@@ -540,3 +540,35 @@ button.banco-campo.in-scelta { background: var(--pesca); }
   .tessere { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .griglia-quattro { grid-template-columns: 1fr; }
 }
+
+/* ═══════════ TELEFONO: TUTTO CENTRATO ═══════════ */
+
+@media (max-width: 700px) {
+  .pagina-testa { align-items: center; text-align: center; }
+  .pagina-testa .citazione { align-self: center; text-align: center; }
+  .pagina-copertina-dida { text-align: center; }
+
+  .capitolo-testa { align-items: center; text-align: center; }
+
+  .camera-testa { align-items: center; text-align: center; }
+  .camera-testa .scia-specifiche { justify-content: center; }
+  .camera-testa .scia-specifiche div { text-align: center; }
+  .camera-nota { text-align: center; margin-inline: auto; }
+
+  .lista-dotazioni li { text-align: center; }
+  .lista-dotazioni li::before { margin-right: 8px; }
+
+  .tessera { text-align: center; }
+  .quadro-dida { text-align: center; }
+
+  .recapito { align-items: center; text-align: center; }
+  .come-arrivare { align-items: center; text-align: center; margin-inline: auto; }
+
+  .banco-campo { align-items: center; text-align: center; }
+  .ospiti-riga { justify-content: center; }
+  .banco-nota { text-align: center; }
+  .calendario-nota { text-align: center; }
+
+  .pagina-cta { align-items: center; text-align: center; }
+  .cta-righe { justify-content: center; }
+}
