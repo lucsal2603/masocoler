@@ -248,6 +248,24 @@
 
 .come-arrivare strong { font-weight: 400; color: var(--crema); }
 
+/* ═══════════ SCATOLA DEL WIDGET KROSSBOOKING ═══════════ */
+
+.kross-scatola {
+  position: relative;
+  background: var(--crema);
+  border: 1px solid var(--sabbia-linea);
+  padding: clamp(22px, 3.5vw, 48px);
+}
+
+.kross-scatola .kross-container {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* il widget porta i suoi stili: qui solo il minimo per non farlo debordare */
+.kross-scatola * { max-width: 100%; }
+
 /* ═══════════ CTA DI PAGINA ═══════════ */
 
 .pagina-cta {

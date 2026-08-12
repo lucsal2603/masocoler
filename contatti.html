@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pagina.css">
+  <link rel="stylesheet" href="https://data.krossbooking.com/widget/v6/masocoler/1.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080605'/><path d='M18 60 L50 30 L82 60' fill='none' stroke='%23C7B491' stroke-width='6'/><path d='M30 60 L30 80 L70 80 L70 60' fill='none' stroke='%23C7B491' stroke-width='6'/><circle cx='50' cy='16' r='5' fill='%23B44A32'/></svg>">
 </head>
 <body class="pagina">
@@ -110,6 +111,18 @@
       </div>
     </section>
 
+    <!-- ══════════ DISPONIBILITÀ (widget Krossbooking, lo stesso del sito attuale) ══════════ -->
+    <section class="capitolo" id="disponibilita">
+      <div class="capitolo-testa">
+        <p class="etichetta" data-reveal-parole>LE DATE ⌾ DISPONIBILITÀ E PREZZI</p>
+        <h2 class="titolone-medio" data-titolo-maschera>Verificate le date<br>senza uscire da <em>qui</em></h2>
+        <p class="citazione" data-reveal-parole>IL CALENDARIO PARLA COL GESTIONALE DEL MASO: DATE E PREZZI SONO QUELLI VERI, LA CONFERMA ARRIVA SUL PORTALE DI PRENOTAZIONE.</p>
+      </div>
+      <div class="kross-scatola">
+        <div class="kross-container" data-lang="it" data-hotel-id="masocoler"></div>
+      </div>
+    </section>
+
     <!-- ══════════ CTA ══════════ -->
     <section class="pagina-cta">
       <p class="etichetta" data-reveal-parole>LE DATE ⌾ UN MASO SOLO</p>
@@ -172,6 +185,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <!-- widget disponibilità Krossbooking: gli stessi include del sito attuale -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://data.krossbooking.com/widget/v6/masocoler/1.js"></script>
   <script src="js/pagina.js"></script>
 </body>
 </html>

@@ -377,14 +377,17 @@
       return;
     }
 
-    /* ── desktop: coreografia in cinque tempi ──
+    /* ── desktop: coreografia in sei tempi ──
        1) si arriva e c'è solo il titolo, fermo (0–10% del pin);
        2) le due palle entrano da fuori schermo (10–36%) e si fermano
           in obliquo, in basso a sinistra e in alto a destra, con gli
           archi che quasi si toccano al centro (~60px);
        3) il titolo sparisce con un soffio (37–45%);
        4) qualche altro scroll con i soli archi vuoti;
-       5) dal ~46–50% sfilano le scritte: su a sinistra, giù a destra.
+       5) dal ~46–50% sfilano le scritte: su a sinistra, giù a destra
+          (le corse sono tarate perché l'ultima parola passi entro l'82%);
+       6) all'84% le palle se ne vanno per la stessa diagonale, la nota
+          si spegne, e allo sgancio il sito riprende a scorrere pulito.
        Solo parole, niente foto. Le basi sono scelte così che durante
        l'ingresso ogni parola aspetti FUORI dall'arco visibile.
        Finestre di sfilata verso il centro: +59° (sinistra), −121° (destra). */
@@ -402,19 +405,24 @@
     const fuoriSinX = -(r + 60) - D / 2;
     const fuoriDesX = r + 60 + D / 2;
 
-    const passoSin = 13, corsaSin = 312, baseSin = 248;
-    const passoDes = 13, corsaDes = 296, baseDes = 66;
+    const passoSin = 13, corsaSin = 360, baseSin = 248;
+    const passoDes = 13, corsaDes = 340, baseDes = 66;
 
     gsap.set(sinistra, { x: fuoriSinX, y: centroSin.y - vh / 2, yPercent: -50, rotation: baseSin });
     gsap.set(destra, { x: fuoriDesX, y: centroDes.y - vh / 2, yPercent: -50, rotation: baseDes });
     const raggiSin = prepara(sinistra, baseSin, 1, passoSin);
     const raggiDes = prepara(destra, baseDes, 1, passoDes);
 
+    const nota = quadro.querySelector(".ruota-nota");
     const coreografia = gsap.timeline({ scrollTrigger: scrub() });
     coreografia
       .to(sinistra, { x: riposoSinX, duration: 0.26, ease: "power2.out" }, 0.10)
       .to(destra, { x: riposoDesX, duration: 0.26, ease: "power2.out" }, 0.10)
       .to(testa, { y: -48, autoAlpha: 0, filter: "blur(8px)", duration: 0.08, ease: "power1.in" }, 0.37)
+      /* congedo: finita la sfilata, le palle escono per la stessa diagonale */
+      .to(sinistra, { x: fuoriSinX, duration: 0.12, ease: "power2.in" }, 0.84)
+      .to(destra, { x: fuoriDesX, duration: 0.12, ease: "power2.in" }, 0.84)
+      .to(nota, { autoAlpha: 0, duration: 0.06, ease: "power1.in" }, 0.87)
       .set(quadro, {}, 1); /* àncora: la scala del tempo resta 0–1 sul pin */
 
     gsap.to(sinistra, { rotation: baseSin - corsaSin, ease: "none", scrollTrigger: scrub() });
