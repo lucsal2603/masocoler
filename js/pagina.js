@@ -10,40 +10,6 @@
   const riduci = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const tocco = window.matchMedia("(hover: none)").matches;
 
-  /* ── utilità: avvolgi ogni lettera in maschera + span ── */
-  function spezzaLettere(el, classeMaschera) {
-    const pezzi = [];
-    const nodi = Array.from(el.childNodes);
-    el.textContent = "";
-    nodi.forEach((nodo) => {
-      const testo = nodo.textContent;
-      const corsivo = nodo.nodeType === 1 && nodo.tagName === "EM";
-      for (const ch of testo) {
-        if (ch === " " || ch === " ") {
-          el.appendChild(document.createTextNode(" "));
-          el._gruppoAperto = null;
-          continue;
-        }
-        if (!el._gruppoAperto) {
-          const gruppo = document.createElement("span");
-          gruppo.className = "gruppo-lettere";
-          el.appendChild(gruppo);
-          el._gruppoAperto = gruppo;
-        }
-        const maschera = document.createElement("span");
-        maschera.className = classeMaschera;
-        const interno = document.createElement("span");
-        interno.textContent = ch;
-        if (corsivo) interno.classList.add("em-lettera");
-        maschera.appendChild(interno);
-        el._gruppoAperto.appendChild(maschera);
-        pezzi.push(interno);
-      }
-    });
-    delete el._gruppoAperto;
-    return pezzi;
-  }
-
   /* ── utilità: avvolgi ogni parola in .parola > span ── */
   function spezzaParole(el) {
     const parole = el.textContent.trim().split(/\s+/);
@@ -231,23 +197,26 @@
     });
   });
 
-  /* ════════════ MARCHIO GIGANTE NEL FOOTER ════════════ */
+  /* ════════════ MARCHIO GIGANTE NEL FOOTER ════════════
+     Resta inciso in filigrana e si riempie di crema mano a mano
+     che si scende: pieno esattamente quando la pagina finisce. */
   (function marchio() {
-    const gigante = document.getElementById("marchioGigante");
-    if (!gigante) return;
-    const lettere = spezzaLettere(gigante, "lettera-maschera");
-    gsap.set(lettere, { yPercent: 112 });
-    gsap.to(lettere, {
-      yPercent: 0,
-      stagger: 0.045,
-      ease: "expo.out",
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: gigante,
-        start: "top 92%",
-        once: true,
-      },
-    });
+    const pieno = document.getElementById("marchioPieno");
+    if (!pieno) return;
+    gsap.fromTo(pieno,
+      { clipPath: "inset(0 100% 0 0)" },
+      {
+        clipPath: "inset(0 0% 0 0)",
+        ease: "none",
+        scrollTrigger: {
+          /* comincia appena prima che spunti e si completa poco sopra
+             il fondo: chi non tocca l'ultimo pixel lo vede pieno lo stesso */
+          trigger: document.getElementById("marchioGigante"),
+          start: "top 104%",
+          end: "bottom 96%",
+          scrub: 0.7,
+        },
+      });
   })();
 
 })();

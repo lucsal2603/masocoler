@@ -560,22 +560,26 @@
     });
   });
 
-  /* ════════════ MARCHIO GIGANTE NEL FOOTER ════════════ */
+  /* ════════════ MARCHIO GIGANTE NEL FOOTER ════════════
+     Resta inciso in filigrana e si riempie di crema mano a mano
+     che si scende: pieno esattamente quando la pagina finisce. */
   (function marchio() {
-    const gigante = document.getElementById("marchioGigante");
-    const lettere = spezzaLettere(gigante, "lettera-maschera");
-    gsap.set(lettere, { yPercent: 112 });
-    gsap.to(lettere, {
-      yPercent: 0,
-      stagger: 0.045,
-      ease: "expo.out",
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: gigante,
-        start: "top 92%",
-        once: true,
-      },
-    });
+    const pieno = document.getElementById("marchioPieno");
+    if (!pieno) return;
+    gsap.fromTo(pieno,
+      { clipPath: "inset(0 100% 0 0)" },
+      {
+        clipPath: "inset(0 0% 0 0)",
+        ease: "none",
+        scrollTrigger: {
+          /* comincia appena prima che spunti e si completa poco sopra
+             il fondo: chi non tocca l'ultimo pixel lo vede pieno lo stesso */
+          trigger: document.getElementById("marchioGigante"),
+          start: "top 104%",
+          end: "bottom 96%",
+          scrub: 0.7,
+        },
+      });
   })();
 
   /* nella banda scura e sul footer la chip si fa da parte:
